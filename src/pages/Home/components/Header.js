@@ -1,5 +1,6 @@
 import React from 'react'
 
-export const Header = () => (
-    <h2>Descrube en parchemonos...</h2>
+
+export const Header = (props) => (
+    <h2 style={props.styles}>{ props.title }</h2>
 )

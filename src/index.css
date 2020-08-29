@@ -1,13 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;900&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.page {
+  margin: 0 20px;
 }
+
+.topbar {
+  background-color: #FF5A5F;
+  padding: 10px 0;
+}
+.topbar p {
+  color: #fff;
+  margin: 0;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.navigation ul {
+  display: flex;
+  padding: 0;
+}
+
+.navigation ul li {
+  list-style: none;
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 15px;
+}
+
+.navigation li ion-icon{
+  font-size: 1.6em;
+  color: #dadbe0;
+  padding: 10px 0px;
+}
+
+.navigation ul li:hover {
+  border-bottom: 3px solid #FF5A5F;
+}
+
+.navigation ul li:hover ion-icon {
+  color: #FF5A5F;
+}
+
+.navigation ul li.active {
+  border-bottom: 3px solid #FF5A5F;
+}
+
+.navigation ul li.active ion-icon{
+  color: #FF5A5F;
+}
+
+
+.search-container {
+  display: flex;
+}
+.search-container input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #f2f2f2;
+  box-shadow: 1px 2px 2px #ccc;
+  border-radius: 2px;
+  outline: none;
+}
+
+.search-container i {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.search-container i ion-icon {
+  font-size: 1.5em;
+  color: #dadbe0;
+}
+
+.ranking-container {
+  display: flex;
+  overflow-x: auto;
+}
+
+.card-container {
+  padding: 0 10px;
+  background-size: cover;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0 10px;
+  border-radius: 10px;
+}
+
+.card-container h5 { 
+  color: #fff;
+  margin: 0px;
+  font-weight: 400;
+  width: 170px;
+  font-size: 1.10em;
+}
+
+.card-container p { 
+  color: #fff;
+  margin: 0px;
+  font-weight: 300;
+  font-size: 0.8em;
+  margin-bottom: 7px;
+}
+

@@ -1,8 +1,10 @@
 import React from 'react'
 
 export const Search = () => (
-    <div>
-        <input type="text" />
-        <i>Filtro</i>
+    <div className="search-container">
+        <input placeholder="Buscar aventura..." type="text" />
+        <i>
+            <ion-icon name="funnel"></ion-icon>
+        </i>
     </div>
 )

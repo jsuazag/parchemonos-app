@@ -1,7 +1,10 @@
 import React from 'react'
+import { Adventure } from './Adventure'
 
 export const Experiences = () => (
     <section>
-        lista de adventures
+        <Adventure />
+        <Adventure />
+        <Adventure />
     </section>
 )
