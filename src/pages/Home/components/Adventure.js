@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Adventure = (props) => (
     <div>
-        <i>Image</i>
+        <img src="#" />
         <article>
             <h3>Nombre aventura</h3>
             <p>Lugar</p>
