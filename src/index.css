@@ -96,7 +96,7 @@ body {
   border-radius: 10px;
 }
 
-.card-container h5 { 
+.card-container h5 {
   color: #fff;
   margin: 0px;
   font-weight: 400;
@@ -104,7 +104,7 @@ body {
   font-size: 1.10em;
 }
 
-.card-container p { 
+.card-container p {
   color: #fff;
   margin: 0px;
   font-weight: 300;
@@ -112,3 +112,43 @@ body {
   margin-bottom: 7px;
 }
 
+.card-detail {
+  border: 1px solid #f2f2f2;
+  box-shadow: 1px 2px 8px #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.card-detail img {
+  width: 100%;
+}
+.card-detail div {
+  padding: 3px 10px;
+}
+.card-detail div h2 {
+  color: #767676;
+  font-weight: 400;
+  font-size: 1.3em;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+}
+
+.score div {
+  display: flex;
+  padding: 0px;
+}
+
+.score div ion-icon {
+  margin-right: 3px;
+  padding: 0px;
+  color: #00A699;
+}
+
+.score p {
+  padding: 0px;
+  margin: 0px;
+  font-weight: 300;
+  margin-left: 12px;
+}
