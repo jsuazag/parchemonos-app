@@ -1,6 +1,6 @@
 import React from 'react'
-import {Home} from './pages/Home'
+import { Navigation } from './pages/Navigation'
 
 export const App = () => (
-  <Home />
+  <Navigation />
 )
