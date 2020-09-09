@@ -13,6 +13,7 @@ body {
 .topbar {
   background-color: #FF5A5F;
   padding: 10px 0;
+  margin-bottom: 10px;
 }
 .topbar p {
   color: #fff;
@@ -84,6 +85,9 @@ body {
   display: flex;
   overflow-x: auto;
 }
+.ranking-container a {
+  text-decoration: none;
+}
 
 .card-container {
   padding: 0 10px;
@@ -151,4 +155,28 @@ body {
   margin: 0px;
   font-weight: 300;
   margin-left: 12px;
+}
+
+.navigation-web {
+  position: fixed;
+  display: none;
+  width: 280px;
+  height: 100%;
+  background-color: lightblue;
+}
+
+.main-page {
+  margin-left: 0px;
+}
+
+@media (min-width: 768px) {
+  .navigation {
+    display: none;
+  }
+  .navigation-web {
+    display: inline;
+  }
+  .main-page {
+    margin-left: 280px;
+  }
 }
