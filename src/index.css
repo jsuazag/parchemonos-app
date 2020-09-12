@@ -10,8 +10,30 @@ a, a:hover{
   text-decoration: none;
 }
 
+.btn {
+  width: 100%;
+  margin: 15px 0;
+  padding: 5px 0;
+  border: 1px solid #ccc;
+  font-weight: 700;
+  font-size: 1.05em;
+  cursor: pointer;
+  border-radius: 6px;
+  outline: none;
+}
+.btn.primary {
+  background: rgb(0,166,153);
+  background: linear-gradient(90deg, rgba(0,166,153,1) 0%, rgba(0,184,170,1) 100%);
+  color: #fff;
+  border: 1px solid #00A699;
+  opacity: 0.95;
+}
+.btn.primary:hover {
+  opacity: 1;
+}
+
 .page {
-  margin: 0 20px;
+  margin: 0 20px 60px 20px;
 }
 
 .topbar {

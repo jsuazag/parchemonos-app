@@ -4,6 +4,7 @@ import { Header } from './../../components/Header'
 import { CardDetail } from './components/CardDetail'
 import { useParams } from 'react-router-dom'
 import { EXPERIENCES_DATA } from './../../data/ExperiencesData'
+import { Button } from '../../components/Button'
 
 export const Detail = () => {
 
@@ -16,6 +17,10 @@ export const Detail = () => {
     if (experience) setAdventure(experience)
   }, [])
 
+  const clickButton = () => {
+    alert('botón fue presionado...')
+  }
+
   // retorna el jsx
   return (
     <Page>
@@ -24,6 +29,7 @@ export const Detail = () => {
         ? <>
             <Header title={adventure.title} />
             <CardDetail {...adventure} />
+            <Button onPress={clickButton} label="¡Reserva tu pache!" />
           </>
         : <p>Experiencia no encontrada</p>
       }
