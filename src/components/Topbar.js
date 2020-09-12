@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const Topbar = () => (
-    <div className="topbar">
-        <p>Parchemonos</p>
-    </div>
+  <div className="topbar">
+    <img width="230px" src="/static/logo2.png" alt="logo" />
+  </div>
 )
