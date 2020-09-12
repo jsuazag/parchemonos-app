@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Page } from '../Page'
 import { Header } from './../../components/Header'
 import { CardDetail } from './components/CardDetail'
@@ -8,19 +8,26 @@ import { EXPERIENCES_DATA } from './../../data/ExperiencesData'
 export const Detail = () => {
 
   const { id } = useParams()
+  const [adventure, setAdventure] = useState(null)
 
   // constructor / component did mount
   useEffect(() => {
     const experience = EXPERIENCES_DATA.find(el => el.id === Number(id))
-    console.log('experience', experience)
+    if (experience) setAdventure(experience)
   }, [])
 
   // retorna el jsx
   return (
     <Page>
-      {id}
-      <Header title="Parapente en san felix" />
-      <CardDetail />
+      {
+        adventure !== null
+        ? <>
+            <Header title={adventure.title} />
+            <CardDetail {...adventure} />
+          </>
+        : <p>Experiencia no encontrada</p>
+      }
+
     </Page>
   )
 }
