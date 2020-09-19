@@ -10,6 +10,8 @@ import {
   Switch,
   Route
 } from 'react-router-dom'
+import SpikeClassComponent from '../spikes/SpikeClassComponent'
+import { SpikeFunctionComponent } from '../spikes/SpikeFunctionComponent'
 
 export const Navigation = () => (
   <Router>
@@ -19,6 +21,8 @@ export const Navigation = () => (
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
       <Route path="/booking" component={Booking} />
+      <Route path="/class" component={SpikeClassComponent} />
+      <Route path="/function" component={SpikeFunctionComponent} />
     </Switch>
   </Router>
 )
