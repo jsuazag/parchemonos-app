@@ -5,8 +5,9 @@ export const Button = (
       type = 'button',
       label = 'texto',
       variant = 'primary',
-      onPress = () => {}
+      onPress = () => {},
+      disabled = false
     }
   ) => (
-  <button onClick={ onPress } className={`btn ${variant}`} type={type}>{label}</button>
+  <button disabled={disabled} onClick={ onPress } className={`btn ${variant}`} type={type}>{label}</button>
 )

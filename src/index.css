@@ -31,9 +31,41 @@ a, a:hover{
 .btn.primary:hover {
   opacity: 1;
 }
+.btn:disabled {
+  background: #ccc;
+  border: 1px solid #666;
+  cursor: no-drop;
+}
 
 .page {
   margin: 0 20px 60px 20px;
+}
+
+.form {
+
+}
+
+.form div {
+  border: 1px solid #ccc;
+  background-color: #f2f2f2;
+  margin: 15px 0;
+  padding: 0 5px;
+  border-radius: 4px;
+}
+
+.form div label {
+  color: #666;
+}
+
+.form div input, .form div textarea {
+  border: none;
+  width: 100%;
+  padding: 0px;
+  font-family: 'Lato';
+  background-color: transparent;
+  outline: none;
+  font-size: 1.1em;
+  margin-top: 5px;
 }
 
 .topbar {
