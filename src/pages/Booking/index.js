@@ -34,7 +34,6 @@ export const Booking = () => {
             onChange={ e => setBookingDate(e.target.value) }
           />
         </div>
-        { bookingDate }
         <div>
           <label>Comentarios adicionales</label>
           <textarea value={comments} onChange={ e => setComments(e.target.value) } ></textarea>
