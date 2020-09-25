@@ -15,6 +15,6 @@ export const Score = ({ stars = 0, users = 0, size = '14px' }) => (
         [1,2,3,4,5].map(el => el <= stars ? <StarFill size={ size } /> : <StarEmpty size={ size } /> )
       }
     </div>
-    <p style={{ fontSize: size }} >{ users }</p>
+    <p style={{ fontSize: size }} >{ users } usuarios</p>
   </section>
 )

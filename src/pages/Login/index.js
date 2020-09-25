@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Page } from '../Page'
 import { Button } from '../../components/Button'
 import { validateEmail } from './../../utils/validateEmail'
+import { UserContext } from './../../contexts/UserContext'
 
 export const Login = () => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isValidForm, setIsValidForm] = useState(false)
+  const { user, setUser } = useContext(UserContext)
 
   useEffect(() => {
     setIsValidForm(validateEmail(email) && password !== '')
@@ -15,13 +17,24 @@ export const Login = () => {
 
   const loginFormHandler = (e) => {
     e.preventDefault()
-    const form = {
+    /*const form = {
       email,
       password
     }
     console.log('form login', form)
     setEmail('')
-    setPassword('')
+    setPassword('')*/
+    validateUser()
+  }
+
+  const validateUser = () => {
+    const emailUser = email
+    const passUser = password
+    /* TODO: cambiar la variable del usuario (isAuthenticated)
+    * a: true, Si y solo siii:
+    * email = "pepito@gmail.com" y contraseña = "123456"
+    * y lo redirija al home de la app
+    */
   }
 
   return (
@@ -41,6 +54,7 @@ export const Login = () => {
           />
         </div>
         <Button disabled={!isValidForm} label="Ingresar" type="submit" />
+        { user.name }
       </form>
     </Page>
   )

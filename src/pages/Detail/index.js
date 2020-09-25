@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Page } from '../Page'
 import { Header } from './../../components/Header'
 import { CardDetail } from './components/CardDetail'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import { EXPERIENCES_DATA } from './../../data/ExperiencesData'
 import { Button } from '../../components/Button'
+import { UserContext } from './../../contexts/UserContext'
 
 export const Detail = () => {
 
   const { id } = useParams()
+  const history = useHistory()
   const [adventure, setAdventure] = useState(null)
+  const { user } = useContext(UserContext)
 
   // constructor / component did mount
   useEffect(() => {
@@ -17,8 +20,12 @@ export const Detail = () => {
     if (experience) setAdventure(experience)
   }, [])
 
-  const clickButton = () => {
-    alert('botón fue presionado...')
+  const goToBookingHandler = () => {
+    if (user.isAuthenticated) {
+      history.push(`/booking/${id}`)
+    } else {
+      history.push(`/login`)
+    }
   }
 
   // retorna el jsx
@@ -29,7 +36,8 @@ export const Detail = () => {
         ? <>
             <Header title={adventure.title} />
             <CardDetail {...adventure} />
-            <Button onPress={clickButton} label="¡Reserva tu pache!" />
+            <Button onPress={goToBookingHandler} label="¡Reserva tu pache!" />
+            { user.name }
           </>
         : <p>Experiencia no encontrada</p>
       }
