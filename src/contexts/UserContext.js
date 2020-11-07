@@ -1,7 +1,7 @@
 import React, { useState, createContext } from 'react'
 
 const initialState = {
-  name: 'Juan Esteban',
+  name: '',
   email: '',
   identification: '',
   phone: '',
