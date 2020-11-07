@@ -3,6 +3,7 @@ import { Page } from '../Page'
 import { Button } from '../../components/Button'
 import { validateEmail } from './../../utils/validateEmail'
 import { UserContext } from './../../contexts/UserContext'
+import { useHistory } from 'react-router-dom'
 
 export const Login = () => {
 
@@ -10,6 +11,7 @@ export const Login = () => {
   const [password, setPassword] = useState('')
   const [isValidForm, setIsValidForm] = useState(false)
   const { user, setUser } = useContext(UserContext)
+  const history = useHistory()
 
   useEffect(() => {
     setIsValidForm(validateEmail(email) && password !== '')
@@ -30,11 +32,13 @@ export const Login = () => {
   const validateUser = () => {
     const emailUser = email
     const passUser = password
-    /* TODO: cambiar la variable del usuario (isAuthenticated)
-    * a: true, Si y solo siii:
-    * email = "pepito@gmail.com" y contraseña = "123456"
-    * y lo redirija al home de la app
-    */
+    if (emailUser == "pepito@gmail.com" && passUser == "123456") {
+      setUser({ isAuthenticated: true })
+      history.push('/')
+    } else {
+      setPassword('')
+      alert('Error usuario')
+    }
   }
 
   return (

@@ -17,6 +17,6 @@ export const MENU_OPTIONS = [
   {
     title : 'Mi Cuenta',
     icon: 'person',
-    path: '/mi-cuenta'
+    path: '/login'
   }
 ]
