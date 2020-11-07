@@ -4,6 +4,7 @@ import { Button } from '../../components/Button'
 import { validateEmail } from './../../utils/validateEmail'
 import { UserContext } from './../../contexts/UserContext'
 import { useHistory } from 'react-router-dom'
+import { requestHttp } from './../../services/HttpServer'
 
 export const Login = () => {
 
@@ -19,17 +20,28 @@ export const Login = () => {
 
   const loginFormHandler = (e) => {
     e.preventDefault()
-    /*const form = {
+    const form = {
       email,
       password
     }
     console.log('form login', form)
-    setEmail('')
-    setPassword('')*/
-    validateUser()
+    validateUser(form)
   }
 
-  const validateUser = () => {
+  const validateUser = async (data) => {
+    try {
+      const response = await requestHttp('post', 'users/login', data)
+      setUser({ isAuthenticated: true })
+      localStorage.setItem('TOKEN', response.token)
+      setTimeout(() => {
+        history.push('/')
+      }, 2000)
+    } catch (error) {
+      alert('Error usuario no valido')
+    }
+  }
+
+  /*const validateUser = () => {
     const emailUser = email
     const passUser = password
     if (emailUser === "pepito@gmail.com" && passUser === "123456") {
@@ -39,7 +51,7 @@ export const Login = () => {
       setPassword('')
       alert('Error usuario')
     }
-  }
+  }*/
 
   return (
     <Page>

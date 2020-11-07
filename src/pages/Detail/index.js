@@ -3,9 +3,9 @@ import { Page } from '../Page'
 import { Header } from './../../components/Header'
 import { CardDetail } from './components/CardDetail'
 import { useParams, useHistory } from 'react-router-dom'
-import { EXPERIENCES_DATA } from './../../data/ExperiencesData'
 import { Button } from '../../components/Button'
 import { UserContext } from './../../contexts/UserContext'
+import { requestHttp } from './../../services/HttpServer'
 
 export const Detail = () => {
 
@@ -16,9 +16,17 @@ export const Detail = () => {
 
   // constructor / component did mount
   useEffect(() => {
-    const experience = EXPERIENCES_DATA.find(el => el.id === Number(id))
-    if (experience) setAdventure(experience)
+    loadExperienceDetail()
   }, [id])
+
+  const loadExperienceDetail = async () => {
+    try {
+      const response = await requestHttp('get', `experiences/detail/${id}`)
+      setAdventure(response.experience)
+    } catch (error) {
+      console.error('Error', error)
+    }
+  }
 
   const goToBookingHandler = () => {
     if (user.isAuthenticated) {
