@@ -4,7 +4,7 @@ export const SpikeFunctionComponent = (props) => {
 
   const [number1, setNumber1] = useState(3)
   const [number2, setNumber2] = useState(6)
-  const [number3, setNumber3] = useState(2)
+  const [number3] = useState(2)
   const [sum, setSum] = useState(0)
 
   useEffect(() => {

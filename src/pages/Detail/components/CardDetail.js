@@ -8,7 +8,7 @@ export const CardDetail = (props) => {
 
   return (
     <article className="card-detail">
-      <img src={props.image} />
+      <img alt="logo experience" src={props.image} />
       <div>
         { messageValue }
         <p>{props.title}</p>

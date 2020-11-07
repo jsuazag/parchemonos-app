@@ -21,7 +21,7 @@ export const Navigation = () => (
       </Link>
       <Link to={'/login'}>
         <li>
-          <a href="#"><ion-icon name="person"></ion-icon></a>
+          <ion-icon name="person"></ion-icon>
         </li>
       </Link>
     </ul>

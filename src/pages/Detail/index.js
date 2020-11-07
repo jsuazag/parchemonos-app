@@ -18,7 +18,7 @@ export const Detail = () => {
   useEffect(() => {
     const experience = EXPERIENCES_DATA.find(el => el.id === Number(id))
     if (experience) setAdventure(experience)
-  }, [])
+  }, [id])
 
   const goToBookingHandler = () => {
     if (user.isAuthenticated) {

@@ -13,7 +13,7 @@ export const requestHttp = async (method, url, data = {}, params = {}) => {
     const options = {
       method, // post, get, put, delete
       url,
-      baseUrl: process.env.REACT_APP_BASE_URL,
+      baseURL: process.env.REACT_APP_BASE_URL,
       data, // body
       params, // query params
       timeout: 5000,

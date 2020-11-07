@@ -32,7 +32,7 @@ export const Login = () => {
   const validateUser = () => {
     const emailUser = email
     const passUser = password
-    if (emailUser == "pepito@gmail.com" && passUser == "123456") {
+    if (emailUser === "pepito@gmail.com" && passUser === "123456") {
       setUser({ isAuthenticated: true })
       history.push('/')
     } else {

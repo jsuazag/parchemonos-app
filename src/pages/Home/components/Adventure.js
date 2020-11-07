@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export const Adventure = (props) => (
   <Link to={`/detail/${props.id}`}>
     <div className="adventure-container">
-      <img src={props.image} />
+      <img alt="adventure" src={props.image} />
       <article>
         <h3>{props.title}</h3>
         <p>{props.place}</p>

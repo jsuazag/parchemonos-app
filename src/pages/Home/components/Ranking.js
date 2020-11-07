@@ -1,11 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { requestHttp } from '../../../services/HttpServer'
 import { Card } from './Card'
-import { EXPERIENCES_DATA } from './../../../data/ExperiencesData'
 
-export const Ranking = () => (
-  <section className="ranking-container">
-    {
-      EXPERIENCES_DATA.map((item, index) => <Card key={index} {...item} />)
+export const Ranking = () => {
+
+  const [experiences, setExperiences] = useState([])
+
+  useEffect(() => {
+    loadExperiences()
+  }, []) // se va a ejecutar 1 sola vez
+
+  const loadExperiences = async () => {
+    try {
+      const response = await requestHttp('get', 'experiences/ranking')
+      setExperiences(response.ranking)
+    } catch (error) {
+      console.error('Error', error)
     }
-  </section>
-)
+  }
+
+  return (
+    <section className="ranking-container">
+      {
+        experiences.map((item, index) => <Card key={index} {...item} />)
+      }
+    </section>
+  )
+}
